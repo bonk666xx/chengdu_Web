@@ -1,0 +1,481 @@
+/* ============================================
+   蜀韵·成都 - 公共样式表
+   主题色：金色系 (#C9A96E)
+   风格：现代简约
+   ============================================ */
+
+/* --- CSS 变量定义 --- */
+:root {
+    --gold-primary: #C9A96E;       /* 主金色 */
+    --gold-dark: #8B6914;          /* 深金色 */
+    --gold-light: #F5E6C8;         /* 浅金色 */
+    --gold-accent: #D4AF37;        /* 亮金色 */
+    --bg-dark: #1a1a1a;           /* 深色背景 */
+    --bg-light: #fafaf7;          /* 浅色背景 */
+    --text-dark: #2c2c2c;         /* 深色文字 */
+    --text-gray: #666666;         /* 灰色文字 */
+    --white: #ffffff;             /* 白色 */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 阴影 */
+    --font-cn: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+/* --- 全局重置 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-cn);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* --- 页头区域 --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* 页头左侧：Logo + 标题 */
+.header .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header .logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.header .site-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold-primary);
+    letter-spacing: 4px;
+}
+
+/* 页头右侧：导航栏 */
+.header .nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+
+.header .nav li a {
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* 导航链接下方金线动画 */
+.header .nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: var(--gold-primary);
+    transition: transform 0.3s ease;
+}
+
+.header .nav li a:hover::after,
+.header .nav li a.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.header .nav li a:hover,
+.header .nav li a.active {
+    color: var(--gold-primary);
+}
+
+/* --- 横幅轮播区域 --- */
+.banner {
+    margin-top: 80px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 轮播容器 */
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* 单张轮播幻灯片 */
+.carousel .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel .slide.active {
+    opacity: 1;
+}
+
+/* 轮播图上的遮罩层 */
+.carousel .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+
+/* 轮播图文字 */
+.carousel .slide-content {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+}
+
+.carousel .slide-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 16px;
+    color: var(--gold-light);
+}
+
+.carousel .slide-content p {
+    font-size: 18px;
+    letter-spacing: 4px;
+    opacity: 0.85;
+}
+
+/* 轮播导航点 */
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.carousel-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+    background: var(--gold-primary);
+    transform: scale(1.3);
+}
+
+/* 轮播左右箭头 */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: var(--gold-primary);
+    border-color: var(--gold-primary);
+}
+
+.carousel-arrow.prev { left: 30px; }
+.carousel-arrow.next { right: 30px; }
+
+/* --- 通用内容区块 --- */
+.section {
+    padding: 80px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+}
+
+/* 标题下方金线装饰 */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold-primary);
+    margin: 16px auto 0;
+}
+
+/* --- 视频区域 --- */
+.video-section {
+    background: var(--bg-dark);
+    padding: 80px 60px;
+}
+
+.video-container {
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+/* --- 介绍文字区域 --- */
+.intro-section {
+    padding: 80px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-section .intro-text {
+    font-size: 17px;
+    line-height: 2.2;
+    color: var(--text-gray);
+    text-align: justify;
+    text-indent: 2em;
+}
+
+/* --- 子页面内容区域 --- */
+.page-content {
+    margin-top: 80px;
+    min-height: 60vh;
+    padding: 80px 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-content .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    letter-spacing: 6px;
+    margin-bottom: 40px;
+}
+
+.page-content .page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold-primary);
+    margin: 20px auto 0;
+}
+
+/* 子页面卡片网格 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card .card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #e0d5c1, #c9a96e);
+}
+
+.card .card-body {
+    padding: 24px;
+}
+
+.card .card-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.card .card-body p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* --- 页尾区域 --- */
+.footer {
+    background: var(--bg-dark);
+    color: #999999;
+    padding: 40px 60px 20px;
+    text-align: center;
+}
+
+.footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    list-style: none;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.footer .footer-links li a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-links li a:hover {
+    color: var(--gold-primary);
+}
+
+.footer .footer-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(201, 169, 110, 0.4);
+    margin: 0 auto 24px;
+}
+
+.footer .copyright {
+    font-size: 13px;
+    color: #666666;
+    letter-spacing: 1px;
+}
+
+/* --- 响应式设计 --- */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+        height: 64px;
+    }
+
+    .header .nav {
+        gap: 16px;
+    }
+
+    .header .nav li a {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .header .site-title {
+        font-size: 20px;
+    }
+
+    .header .logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .carousel .slide-content h2 {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .carousel .slide-content p {
+        font-size: 14px;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .section,
+    .intro-section,
+    .page-content {
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}

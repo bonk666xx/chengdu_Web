@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蜀韵·成都 - 成都文化旅游宣传网站，带您领略天府之国的美食、景点、文化与旅行攻略">
+    <title>蜀韵·成都 - 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== 页头区域 ==================== -->
+    <header class="header">
+        <!-- 左侧：Logo + 标题 -->
+        <div class="logo-area">
+            <div class="logo-icon">蜀</div>
+            <span class="site-title">蜀韵・成都</span>
+        </div>
+
+        <!-- 右侧：导航栏 -->
+        <ul class="nav">
+            <li><a href="index.html" class="active">首页</a></li>
+            <li><a href="food.html">美食</a></li>
+            <li><a href="sights.html">景点</a></li>
+            <li><a href="culture.html">文化</a></li>
+            <li><a href="travel.html">攻略</a></li>
+        </ul>
+    </header>
+
+    <!-- ==================== 全屏轮播 Banner ==================== -->
+    <section class="banner">
+        <div class="carousel" id="carousel">
+
+            <!-- 第1张轮播图：锦里古街 -->
+            <div class="slide active" style="background-image: url('https://picsum.photos/seed/chengdu1/1920/1080');">
+                <div class="slide-content">
+                    <h2>天府之国</h2>
+                    <p>三千年的文明积淀，一座来了就不想走的城市</p>
+                </div>
+            </div>
+
+            <!-- 第2张轮播图：都江堰 -->
+            <div class="slide" style="background-image: url('https://picsum.photos/seed/chengdu2/1920/1080');">
+                <div class="slide-content">
+                    <h2>巴蜀神韵</h2>
+                    <p>山水交融，人文荟萃，感受千年蜀地的独特魅力</p>
+                </div>
+            </div>
+
+            <!-- 第3张轮播图：大熊猫 -->
+            <div class="slide" style="background-image: url('https://picsum.photos/seed/chengdu3/1920/1080');">
+                <div class="slide-content">
+                    <h2>熊猫故乡</h2>
+                    <p>与国宝近距离接触，体验人与自然和谐共生之美</p>
+                </div>
+            </div>
+
+            <!-- 第4张轮播图：宽窄巷子 -->
+            <div class="slide" style="background-image: url('https://picsum.photos/seed/chengdu4/1920/1080');">
+                <div class="slide-content">
+                    <h2>烟火成都</h2>
+                    <p>宽窄之间，品一盏盖碗茶，听一段龙门阵</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 轮播导航点 -->
+        <div class="carousel-dots" id="carouselDots"></div>
+
+        <!-- 轮播左右箭头 -->
+        <button class="carousel-arrow prev" id="prevBtn">&#10094;</button>
+        <button class="carousel-arrow next" id="nextBtn">&#10095;</button>
+    </section>
+
+    <!-- ==================== 视频展示区域 ==================== -->
+    <section class="video-section">
+        <div class="section-title">映像成都</div>
+        <div class="video-container">
+            <!-- 成都城市宣传视频（示例视频，请替换为实际视频地址） -->
+            <video controls poster="https://picsum.photos/seed/chengdu-video/960/540">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                您的浏览器不支持视频播放，请升级浏览器。
+            </video>
+        </div>
+    </section>
+
+    <!-- ==================== 成都介绍文字区域 ==================== -->
+    <section class="intro-section">
+        <div class="section-title">走进成都</div>
+        <p class="intro-text">
+            成都，别称蓉城、锦城，是四川省省会、国家中心城市，素有"天府之国"的美誉。这座城市拥有超过三千年的建城史，是古蜀文明的发祥地，金沙遗址的太阳神鸟见证着这片土地远古的辉煌。成都地处四川盆地西部，气候温润、物产丰饶，都江堰水利工程的灌溉使这里水旱从人、不知饥馑，成就了物华天宝的锦绣天府。
+        </p>
+        <br>
+        <p class="intro-text">
+            作为中国四大菜系之一——川菜的发源地，成都以其麻辣鲜香的美食文化闻名世界。火锅、串串香、担担面、龙抄手、钟水饺等数不胜数的地道小吃，构成了成都独特的市井烟火气。锦里古街、宽窄巷子、武侯祠、杜甫草堂等历史名胜星罗棋布，承载着厚重的巴蜀文脉。成都也是世界自然遗产大熊猫栖息地的核心区域，大熊猫繁育研究基地每年吸引着全球无数游客前来一睹国宝风采。此外，川剧变脸、蜀绣、漆器等非物质文化遗产，彰显着这座城市深厚的文化底蕴。
+        </p>
+        <br>
+        <p class="intro-text">
+            今天的成都，既是保留着老茶馆、川剧戏台等传统韵味的古城，又是高楼林立、科技创新的现代都市。快慢相融的生活节奏，"安逸"与"巴适"的生活态度，让成都连续多年蝉联"中国最具幸福感城市"。无论您是寻味而来，还是为风景驻足，成都都将以它独有的方式，为您留下一段温暖而难忘的蜀韵记忆。
+        </p>
+    </section>
+
+    <!-- ==================== 页尾区域 ==================== -->
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="food.html">美食</a></li>
+            <li><a href="sights.html">景点</a></li>
+            <li><a href="culture.html">文化</a></li>
+            <li><a href="travel.html">攻略</a></li>
+        </ul>
+        <div class="footer-divider"></div>
+        <p class="copyright">© 2026 蜀韵·成都 Chengdu Cultural Tourism. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ==================== 轮播图 JavaScript 逻辑 ==================== -->
+    <script>
+        (function() {
+            var slides = document.querySelectorAll('.carousel .slide');
+            var dotsContainer = document.getElementById('carouselDots');
+            var prevBtn = document.getElementById('prevBtn');
+            var nextBtn = document.getElementById('nextBtn');
+            var currentIndex = 0;
+            var totalSlides = slides.length;
+            var autoTimer = null;
+            var interval = 4000; /* 自动切换间隔（毫秒） */
+
+            /* 生成导航点 */
+            for (var i = 0; i < totalSlides; i++) {
+                var dot = document.createElement('span');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', function() {
+                    var idx = parseInt(this.getAttribute('data-index'));
+                    goToSlide(idx);
+                });
+                dotsContainer.appendChild(dot);
+            }
+
+            var allDots = document.querySelectorAll('.carousel-dots .dot');
+
+            /* 切换到指定幻灯片 */
+            function goToSlide(index) {
+                slides[currentIndex].classList.remove('active');
+                allDots[currentIndex].classList.remove('active');
+                currentIndex = index;
+                slides[currentIndex].classList.add('active');
+                allDots[currentIndex].classList.add('active');
+                resetAutoPlay();
+            }
+
+            /* 下一张 */
+            function nextSlide() {
+                var next = (currentIndex + 1) % totalSlides;
+                goToSlide(next);
+            }
+
+            /* 上一张 */
+            function prevSlide() {
+                var prev = (currentIndex - 1 + totalSlides) % totalSlides;
+                goToSlide(prev);
+            }
+
+            /* 自动播放 */
+            function startAutoPlay() {
+                autoTimer = setInterval(nextSlide, interval);
+            }
+
+            /* 重置自动播放计时器 */
+            function resetAutoPlay() {
+                clearInterval(autoTimer);
+                startAutoPlay();
+            }
+
+            /* 绑定箭头点击事件 */
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            /* 启动自动播放 */
+            startAutoPlay();
+        })();
+    </script>
+
+</body>
+</html>
